@@ -27,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt) {
         $stmt->bind_param("sss", $applicantName, $filledByStaff, $staffUsername);
         if ($stmt->execute()) {
-            echo "Application submitted successfully";
+            // Application submitted successfully
+            echo '<script>alert("Form Submitted !!! Thank you for filling the form. You will receive an email regarding your loan.");</script>';
             // Redirect to personalloanapplicants.html
             header("Location: personalloanapplicants.html");
             exit();
