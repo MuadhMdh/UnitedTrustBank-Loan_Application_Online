@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Loan Calculate - Loan Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        
+    .vertical-nav {
+    background-color: rgb(65, 63, 63);
+    color: #fff;
+    width: 17%;
+    height: 110rem;
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="./assets/logo.png" alt="Logo">
+        <h1>Personal Loan Calculator</h1>
+        <a href="index.html" class="home-link">
+            <img src="./assets/home.png" alt="Home" class="home-icon">
+        </a>
+    </header>
+
+    <div class="dashboard">
+        <nav class="vertical-nav">
+            <ul>
+                <li><a href="personalloanapplication.html">Personal Loan Application</a></li>
+                <li><a href="perssonalloancalculator.html">Personal Loan Calculator</a></li>
+                <li><a href="interestrate.html">Interest Rate</a></li>
+                <li><a href="#">Credit Card Application</a></li>
+                <li><a href="personalloanapplicants.html">Personal Loan Applicants</a></li>
+                <li><a href="#">Credit Card Applicants</a></li>
+            </ul>
+        </nav>
+        <section class="content">    
+    <div id="calculator">
+        <h2>Personal Loan Calculator</h2>
+        <label for="loanAmount">Loan Amount ($):</label>
+        <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+
+        <label for="interestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter annual interest rate" required>
+
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term in years" required>
+
+        <button onclick="calculateLoan()">Calculate</button>
+
+        <div id="result"></div>
+      </section>
+    </div>
+    <script>
+        function calculateLoan() {
+            // Get values from inputs
+            var loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            var interestRate = parseFloat(document.getElementById('interestRate').value);
+            var loanTerm = parseFloat(document.getElementById('loanTerm').value);
+
+            // Validate inputs
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+                alert('Please enter valid values for all fields.');
+                return;
+            }
+
+            // Calculate monthly interest rate and number of payments
+            var monthlyRate = interestRate / 100 / 12;
+            var numberOfPayments = loanTerm * 12;
+
+            // Calculate monthly payment using the formula for an amortizing loan
+            var monthlyPayment = (loanAmount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -numberOfPayments));
+
+            // Display the result
+            document.getElementById('result').innerHTML = 'Monthly Payment: $' + monthlyPayment.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

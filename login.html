@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Management System - Sign In</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+        /* Background Image */
+
+body {
+    background-image: url('./assets/loginpage.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="./assets/logo.png" alt="Logo">
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="login.html">Sign In</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Welcome</h1>
+        <h2>United Trust Bank</h2>
+        <h3>Sign in to your Account</h3>
+        <form action="login.php" method="post" class="login-form">
+            <div class="formm-group">
+                <label for="username">Username:</label>
+                <input type="text" placeholder="Enter Email" id="username" name="username" required>
+            </div>
+            <div class="formm-group">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="password" name="password" required>
+            <div class="form-group">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+        <div class="register-link">
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </section>
+</body>
+
+</html>

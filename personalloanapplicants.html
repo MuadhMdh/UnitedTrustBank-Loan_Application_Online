@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Applications - Loan Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./assets/logo.png" alt="Logo">
+        <h1>Personal Loan Applicants</h1>
+        <a href="index.html" class="home-link">
+            <img src="./assets/home.png" alt="Home" class="home-icon">
+        </a>
+    </header>
+
+    <div class="dashboard">
+        <nav class="vertical-nav">
+            <ul>
+                <li><a href="personalloanapplication.html">Personal Loan Application</a></li>
+                <li><a href="personalloancalculator.html">Personal Loan Calculator</a></li>
+                <li><a href="interestrate.html">Interest Rate</a></li>
+                <li><a href="#">Credit Card Application</a></li>
+                <li><a href="personalloanapplicants.html">Personal Loan Applicants</a></li>
+                <li><a href="#">Credit Card Applicants</a></li>
+            </ul>
+        </nav>
+        <section class="content">
+            <!-- Include the results from display_applications.php -->
+            <?php include 'display_applications.php'; ?>
+        </section>
+    </div>
+
+</body>
+
+</html>
